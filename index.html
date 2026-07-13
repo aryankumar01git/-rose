@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Naina ❤️ | Happy Rose Day</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Great+Vibes&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff4d6d;
+            --secondary-color: #ff8fa3;
+            --accent-color: #fff0f3;
+            --text-color: #590d22;
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ff4d6d'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>") 12 12, auto;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffdde1 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            height: 100vh;
+            overflow: hidden;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Ripple Effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-anim 0.6s linear;
+            background: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+        }
+
+        @keyframes ripple-anim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Canvas Background */
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: auto;
+        }
+
+        /* Glassmorphism Container */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.2);
+            /* Removed backdrop-filter for better performance */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+            will-change: transform;
+            text-align: center;
+            max-width: 90%;
+            width: 500px;
+            /* Slightly wider for new content */
+            position: relative;
+            z-index: 10;
+            /* Mobile Fixes */
+            max-height: 85vh;
+            /* Prevent overflow off screen */
+            overflow-y: auto;
+            /* Allow scrolling inside panel */
+            scrollbar-width: thin;
+            /* Firefox */
+            scrollbar-color: #ff4d6d rgba(255, 255, 255, 0.3);
+
+            animation: float-panel 6s ease-in-out infinite;
+            transition: transform 0.1s;
+            /* For beat bounce */
+        }
+
+        /* Paper Panel for Letter */
+        .paper-panel {
+            background: #fffdf0;
+            /* Cream paper color */
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 90%;
+            width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            z-index: 1010;
+            /* Above modal background */
+            font-family: 'Great Vibes', cursive;
+            color: #4a0404;
+            /* Dark red/brown for ink look */
+            /* Notebook lines effect */
+            background-image: linear-gradient(#e1ebef 1px, transparent 1px);
+            background-size: 100% 2.5rem;
+            line-height: 2.5rem;
+        }
+
+        /* Apply line height to paragraphs to match lines */
+        .paper-panel p {
+            line-height: 2.5rem;
+            margin-bottom: 0;
+            font-size: 1.6rem;
+        }
+
+        .paper-panel::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .paper-panel::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        .paper-panel::-webkit-scrollbar-thumb {
+            background-color: #c9184a;
+            border-radius: 10px;
+        }
+
+        /* Mobile adjustments for paper */
+        @media (max-width: 480px) {
+            .paper-panel {
+                padding: 1.5rem;
+                background-size: 100% 2rem;
+                line-height: 2rem;
+            }
+
+            .paper-panel p {
+                line-height: 2rem;
+                font-size: 1.3rem !important;
+                /* Force override */
+            }
+        }
+
+        /* Custom Scrollbar */
+        .glass-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .glass-panel::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-panel::-webkit-scrollbar-thumb {
+            background-color: #ff4d6d;
+            border-radius: 10px;
+        }
+
+        .glass-panel,
+        .btn {
+            will-change: transform;
+        }
+
+        @keyframes float-panel {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Beat Animation Class */
+        .glass-panel,
+        .btn {
+            will-change: transform;
+        }
+
+        /* Optimization */
+
+        .beating {
+            animation: beat-throb 0.6s infinite alternate;
+            /* Default beat */
+        }
+
+        @keyframes beat-throb {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.02);
+            }
+        }
+
+        /* App Container */
+        #app {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* Stack footer */
+            z-index: 10;
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-grow: 1;
+            /* Allow footer to stay bottom */
+        }
+
+        .page.active {
+            display: flex;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Typography */
+        h1,
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #c9184a;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        /* Buttons */
+        .btn {
+            background: linear-gradient(45deg, #ff4081, #ff80ab);
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            border-radius: 50px;
+            /* Pill shape */
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            will-change: transform;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .glass-panel {
+                padding: 1.2rem;
+                width: 90%;
+                max-height: 80vh;
+            }
+
+            .emoji-marquee {
+                bottom: 60px;
+            }
+
+            #game-score {
+                font-size: 1.2rem;
+                top: 10px;
+                left: 10px;
+            }
+
+            p {
+                font-size: 0.95rem;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Inputs */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.6);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #ff4d6d;
+        }
+
+        /* Music Toggle */
+        #music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+        }
+
+        /* Game Score */
+        #game-score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #c9184a;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 5px 15px;
+            border-radius: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Rotating Quotes */
+        #quote-container {
+            margin: 15px 0;
+            min-height: 60px;
+            font-family: 'Great Vibes', cursive;
+            /* Fancy font for quotes */
+            font-size: 1.8rem;
+            color: #a4133c;
+        }
+
+        .fade-text {
+            animation: textFade 5s infinite;
+        }
+
+        @keyframes textFade {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            20%,
+            80% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Emoji Carousel (Marquee) */
+        .emoji-marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+            opacity: 0.8;
+            position: absolute;
+            bottom: 80px;
+            /* Above footer */
+            pointer-events: none;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+            font-size: 1.5rem;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: 20;
+            /* Stick to bottom */
+            margin-top: auto;
+            color: #800f2f;
+            display: none;
+            /* Hidden on welcome/password */
+        }
+
+        .footer.visible {
+            display: block;
+        }
+
+        .forever-yours {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .made-with {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Audio -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="rose.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle">🔇</button>
+
+    <!-- Canvas for Physics -->
+    <canvas id="canvas"></canvas>
+
+    <!-- App Container -->
+    <div id="app">
+
+        <!-- Screen 1: Welcome -->
+        <div id="welcome-screen" class="page active">
+            <div class="glass-panel" id="welcome-panel"
+                style="min-height: 400px; display: flex; flex-direction: column; justify-content: center;">
+                <h1 id="welcome-title">Loading Love...</h1>
+
+                <div id="welcome-message-container"
+                    style="margin: 20px 0; min-height: 120px; display:flex; flex-direction: column; align-items:center; justify-content:center;">
+                    <div style="font-size: 2rem; margin-bottom: 10px; animation: beat-throb 1s infinite alternate;">💌
+                    </div>
+                    <p id="welcome-message" style="font-size: 1.4rem; line-height: 1.6; font-style: italic;">
+                        Gathering roses for you... 🌹
+                    </p>
+                </div>
+
+                <div id="enter-wrapper" style="opacity: 0; transition: opacity 1s;">
+                    <button class="btn" onclick="goToPassword()">Enter ❤️</button>
+                </div>
+
+                <div class="emoji-marquee" style="position:relative; bottom:0; padding: 20px;">
+                    <span class="marquee-content">🌹 ✨ ❤️ 🌸 💖 🦋 🌷 💝 🌹 ✨ ❤️ 🌸 💖 🦋 🌷 💝</span>
+                </div>
+
+                <button id="skip-btn" onclick="finishWelcomeSequence()"
+                    style="background:none; border:none; color: #800f2f; opacity: 0.5; margin-top: 20px; font-size: 0.8rem; cursor: pointer;">Skip
+                    Intro >></button>
+            </div>
+        </div>
+
+        <!-- Screen 2: Password -->
+        <div id="password-screen" class="page">
+            <div class="glass-panel">
+                <h2>Protected Heart 🔒</h2>
+                <p>What is my nickname for you?</p>
+                <input type="password" id="pass-input" placeholder="Type here..." onkeyup="checkEnter(event)">
+                <button class="btn" onclick="checkPassword()">Unlock</button>
+                <p id="error-msg" style="color: red; font-size: 0.9rem; margin-top: 10px; display: none;">Wrong
+                    password, try again! 🥺</p>
+            </div>
+        </div>
+
+        <!-- Screen 3: Main Layout -->
+        <div id="main-screen" class="page">
+            <div id="game-score">Roses: <span id="score-val">0</span>/10</div>
+
+            <div class="glass-panel" id="main-panel">
+                <h1 id="dynamic-header">Happy Rose Day!</h1>
+
+                <div id="quote-container">
+                    <div id="quote-text" class="fade-text">"You are my forever rose."</div>
+                </div>
+
+                <div style="min-height: 60px; margin-bottom: 20px;">
+                    <p id="typing-text" style="font-size: 1.1rem; font-style: italic;"></p>
+                </div>
+
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                    <button class="btn" onclick="switchScreen('rose-reveal')">Give Rose 🌹</button>
+                    <button class="btn" style="background: white; color: #ff4d6d;" onclick="openLetter()">Secret Letter
+                        💌</button>
+                </div>
+
+                <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+                    <p>Tip: Catch the floating roses! 🌹</p>
+                    <button id="how-to-play"
+                        style="background:none; border:none; text-decoration:underline; color:#c9184a; cursor:pointer;"
+                        onclick="toggleGameHelp()">How to Play</button>
+                </div>
+            </div>
+
+            <div class="emoji-marquee" style="bottom: 15vh;">
+                <span class="marquee-content" id="main-marquee">❤️ 🌹 🦋 💝 🌸 ✨ 💑 💌 🍫 💍 🎀 🌹 ❤️ 🌹 🦋 💝 🌸 ✨ 💑
+                    💌 🍫 💍 🎀</span>
+            </div>
+        </div>
+
+        <!-- Screen 4: Rose Reveal -->
+        <div id="rose-reveal-screen" class="page">
+            <div class="glass-panel"
+                style="background: linear-gradient(135deg, rgba(255, 192, 203, 0.95), rgba(255, 182, 193, 0.95)); backdrop-filter: none; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255,255,255,0.3); width: auto; min-width: 300px;">
+                <h1 style="color: #fff; text-shadow: 2px 2px 4px #ff0055;">For You, My Love...</h1>
+
+                <div id="big-rose-container"
+                    style="position: relative; height: 200px; display: flex; align-items: center; justify-content: center; animation: float-panel 3s ease-in-out infinite;">
+                    <div id="big-rose" onclick="handleBigRoseClick()"
+                        style="font-size: 8rem; cursor: pointer; filter: drop-shadow(0 0 20px rgba(255,0,85,0.6)); transition: transform 0.2s;">
+                        🌹
+                    </div>
+                </div>
+
+                <p style="color: white; font-size: 1.2rem; margin-top: 10px;">(Tap the Rose)</p>
+
+                <div id="reveal-words"
+                    style="min-height: 40px; font-family: 'Pacifico', cursive; font-size: 1.4rem; color: #2c2c2c; text-shadow: none; line-height: 1.6;">
+                </div>
+
+                <button class="btn" style="background: white; color: #ff4d6d; margin-top: 30px;"
+                    onclick="switchScreen('main')">Back to Home </button>
+            </div>
+        </div>
+
+        <!-- Romantic Footer -->
+        <div id="footer" class="footer">
+            <div class="forever-yours">Forever Yours</div>
+            <div class="made-with">
+                Made with <span style="color:red; animation: beat-throb 0.5s infinite;">❤️</span> for my Wife Ji
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modals -->
+    <div id="game-modal" class="modal">
+        <div class="glass-panel"
+            style="max-height: 80vh; overflow-y: auto; background: linear-gradient(135deg, rgba(255, 240, 245, 0.95), rgba(255, 228, 238, 0.95)); backdrop-filter: none; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+            <h2 style="color: #ff0055;">🎉 Ohooo Wife Ji 😄</h2>
+            <p>Aapne 10 roses collect kar liye! 🌹🌹🌹</p>
+            <p>Lagta hai meri Nainu full pro player nikli 😌<br>Game me bhi topper… aur dil me bhi ❤️</p>
+            <p>Par ek secret bataun… 🤫<br>Game ke roses to sirf game me the…</p>
+            <p><strong>Meri life ki asli aur sabse haseen rose<br>sirf aap ho… meri Nainu 🌹🥺❤️</strong></p>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.5); margin: 15px 0;">
+
+            <p style="font-size: 1.1rem; color: #8b0000; font-weight: bold;">Ab reward suno Madam Ji 😝</p>
+            <ul style="text-align: left; list-style: none; padding: 0; font-size: 1rem; margin-bottom: 15px;">
+                <li>👉 tight sa hug 🤗</li>
+                <li>👉 bhut sara chocolate 🍫</li>
+                <li>👉 bhut sara chips, kurkure, taka-tak, khatta-meetha sab 😄</li>
+                <li>👉 aur jab main aaunga tab bhut sara dilaunga😌💕</li>
+                <li>👉 aur ek soft sa pyaara sa kiss forehead pe 😘✨ (care&love wali)</li>
+            </ul>
+
+            <p>aur sabse bada reward…<br><strong>lifetime tang karne wala Hubby 😆</strong></p>
+
+            <p style="font-size: 0.9rem; font-style: italic;">
+                Kabhi Motuu bolunga…<br>
+                Kabhi Khargoshiii bolke bhaagunga 🐰<br>
+                Kabhi Buggu Duggu karke chidhauga 😝
+            </p>
+
+            <p>I love you Wife Ji 🫂💕</p>
+            <p>miss u so much wife jii🫂🙌💕</p>
+            <p style="color: #ff0055; font-weight: bold; font-size: 0.9rem;">– Aapka paglu, thoda sa pareshan karne wala
+                Hubby 😄</p>
+
+            <button class="btn" style="margin-top: 15px;" onclick="closeModal('game-modal')">Love You bacchuu
+                😘</button>
+        </div>
+    </div>
+
+    <div id="letter-modal" class="modal">
+        <div class="paper-panel">
+            <h2 style="color: #8b0000; text-decoration: underline;">My Dearest Naina,</h2>
+            <div class="letter-content"
+                style="font-family: 'Pacifico', cursive; font-size: 1.3rem; text-align: left; line-height: 1.8; color: #2c2c2c;">
+                <p><strong>Meri pyaari Naina ❤️, Meri Wife Ji 💍, Meri Nainu 🥺❤️</strong></p>
+                <p>Meri Jaanu 💖, Meri Motuu 😄, Meri Motkii 😝, Meri Buggu 🐻, Meri Duggu 🐣... Meri Khargoshi 🐰</p>
+                <p>Mere Totuu 🐥, Meri Sona ✨ Meri Mona 🌸, Meri Jadu 🪄 Meri Tona 💫</p>
+                <p>Kabhi Akadu, kabhi Khadush, kabhi meri pyari si Hatthi 🥰... par aap jaise bhi ho… <strong>har roop
+                        me sirf meri ho… samjhe Madam Ji 😘❤️</strong></p>
+                <br>
+                <p>Aaj ye letter likhte waqt mere face pe ek halki si smile hai 😊 aur dil me sirf aur sirf aap ho 💞.
+                    Thoda sa dukh bhi hai… par usse kai zyada khushi hai kyunki meri jaan ji mere saath ho 💕</p>
+                <br>
+                <p>Kabhi kabhi main sach me sochta hoon… pata nahi maine zindagi me aisa kya achha kiya tha jo mujhe aap
+                    jaisi itni pyari, cute, simple, innocent, loyal aur har situation me mera saath dene wali Wife Ji
+                    mili 🙏. Sach kahu jaan ji… aap jaisi ladki maine apni life me kabhi nahi dekhi. Na koi dikhawa… na
+                    ego… sirf sachcha pyaar aur care 💖</p>
+                <br>
+                <p>Sirf 6 mahine hue hain… lekin lagta hai jaise humara rishta saalon purana ho 🤍 jaise Mata Rani ne
+                    pehle hi likh diya tha “ye dono ek dusre ke liye hi bane hain” ✨</p>
+                <br>
+                <p>Aapki hasi 😊 meri sabse badi happiness hai, aapki awaaz 🎧 mera sukoon hai, aapki baatein 💬 mera
+                    favourite time hai. Aur jab aap mujhe “Hubby Ji” bolti ho… dil ko ek alag hi shanti milti hai 🕊️❤️
+                </p>
+                <br>
+                <p>Aap meri himmat ho ❣️, meri taqat ho 💪, meri smile ho 😊, meri aadat ho 🌸, meri duniya ho 🌍. Aur
+                    meri har khushi sirf aapse judi hai Wife Ji ❤️</p>
+                <br>
+                <p>Kabhi Motuu banke nakhre karti ho 😝, kabhi Buggu banke cute lagti ho 🐻, kabhi Khargoshi banke mujhe
+                    pareshaan karti ho 🐰, kabhi Akadu banke attitude dikhati ho 😄. Par sach kahu… <strong>Mujhe aap
+                        har roop me pasand ho… har roop me pyaari lagti ho… aur har roop me sirf meri lagti ho.</strong>
+                    💞</p>
+                <br>
+                <p>Aur pata hai sabse special kya hai? Hum 78 KM door hain 🚶♂️➡️🚶♀️ phir bhi kabhi lagta hi nahi ki
+                    aap door ho… Kabhi feel hi nahi hota ki ye long distance hai. Aapne kabhi mujhe akela mehsoos hi
+                    nahi hone diya. Aapka pyaar itna strong hai ki distance sirf number lagta hai… dil se to aap hamesha
+                    mere paas hi ho ❤️</p>
+                <br>
+                <p>Kabhi lagta hai jaise aap mere side me baithi ho 💕 aur main bas aapse baatein karta rahun… bina waqt
+                    dekhe 🕰️💕. Abhi dekho… raat ke 2:10 AM ho rahe hain… aur mujhe aisa lag raha hai jaise aap mere
+                    bagal me hi baithi ho 🥺❤️</p>
+                <br>
+                <p>Aur aaj jab aap boli ki bhai phone leke shaadi me chala jayega to raat ko baat nahi hogi… tab se mann
+                    thoda udaas hai 😔 ..buggu kaise bolu aapke bina mann nahi lagta mera 🥺. Neend bhi nahi aa rahi
+                    thik se… na dil ko sukoon hai na chain, isliye main aapki pic dekh ke ye letter likh raha hoon 📸❤️
+                </p>
+                <br>
+                <p>Aapki aankhon me dekh ke likh raha hoon… sach me Wife Ji… agar aap paas nahi ho to kya hua…
+                    <strong>Aapka pyaar meri har saans me hai… main har heartbeat me aapko feel karta hoon Wife
+                        Ji.</strong> 💓
+                </p>
+                <br>
+                <p>Aur ek baat bolu… aapki ye aankhein na… 🥺✨ sach me meri jaan le jayengi… Bas iss pic me ek chhoti si
+                    bindi ki kami lag rahi hai 😄 warna meri Nainu to waise bhi bilkul pari lag rahi hai 🧿🌸</p>
+                <br>
+                <p>Thank you meri Nainu… meri Motuu… meri Motkii… meri Buggu… meri Duggu… meri pyari si Khargoshi 🐰.
+                    Itna pyaar dene ke liye… mujhe samajhne ke liye… aur meri life me aane ke liye… 🙏❤️</p>
+                <br>
+                <p><strong>🌹 Happy Rose Day meri Wife Ji 🌹❤️</strong></p>
+                <p>Jaise gulab khushboo failata hai waise hi aap meri zindagi me pyaar aur khushiyan failati ho 💐.
+                    Bhagwan se meri dua hai 🤲 aap hamesha muskurati raho 😊 hamesha khush raho ✨ aur hamara pyaar har
+                    din aur strong hota rahe ❤️</p>
+                <br>
+                <p>Forever yours… ♾️❤️ sirf aur sirf aapka… hamesha ke liye 💍</p>
+                <p>Thoda sa patlu 😁, thoda sa paglu 🤪, thoda sa emotional 🥺, thoda sa ziddi 😌, thoda sa nautanki 😋,
+                    aur thoda sa aapko roz tang aur preshan karne wala 😝💕</p>
+                <p>Kabhi Motuu bolke chidhane wala 😄, kabhi Khargoshi bolke bhagane wala 🐰, kabhi bina wajah pic ke
+                    liye preshan krne wala “miss kar raha hoon” bolne wala 📞❤️, kabhi bin wajha preshan kr ke rulane
+                    wala 😘😂😁, aur kabhi bas aapki hasi dekhne ke liye nautanki karne wala 🎭</p>
+                <br>
+                <p>Par dil se… har saans… har dhadkan… har dua me… sirf aur sirf aapse pyaar karne wala ❤️</p>
+                <p>Aapka personal pareshan-karne-wala par sabse zyada care & pyar karne wala, meri motu se hamesha
+                    chipak ke rehne wala 😘😋😍</p>
+                <br>
+                <p><strong>Aapka hi Hubby Ji 🫂💕</strong></p>
+                <p>#🐰 ##meri Khargoshi ka Khargosh</p>
+                <p>#😁 ##meri Motu ka Patlu</p>
+                <p>### I Really Love You Nainu ❤️</p>
+            </div>
+            <br>
+            <button class="btn" onclick="closeModal('letter-modal')">Close 🌹</button>
+        </div>
+    </div>
+
+    <div id="help-modal" class="modal">
+        <div class="glass-panel">
+            <h2>How to Play</h2>
+            <p>Tap/Click the floating roses to collect them.</p>
+            <p>Each rose gives 1 point.</p>
+            <p>Collect 10 for a special surprise! ❤️</p>
+            <button class="btn" onclick="closeModal('help-modal')">Got it!</button>
+        </div>
+    </div>
+
+    <script>
+        /* ================= VARIABLES ================= */
+        const state = {
+            screen: 'welcome',
+            score: 0,
+            gameActive: false,
+            musicPlaying: false,
+            nicknames: ["Nainu", "Wife Ji", "Jaan", "My Rose", "Beautiful"],
+            particles: [],
+            quotes: [
+                "Your smile is my favorite flower.",
+                "Life with you is a bed of roses.",
+                "You make my heart bloom.",
+                "My love for you grows every day.",
+                "You are the most beautiful rose."
+            ],
+            quoteIndex: 0,
+            welcomeIndex: 0,
+            roseWish: [
+                "🌹 Happy Rose Day Wife Ji ❤️",
+                "Aaj ka din sirf aapke naam…",
+                "Jaise rose simple hota hai par special hota hai,",
+                "waise hi aap meri life ka sabse special hissa ho 😊",
+                "Aap ho to sab kuch achha lagta hai…",
+                "warna din bhi adhoora lagta hai.",
+                "Bas hamesha aise hi muskuraati rehna…",
+                "kyunki aapki smile meri sabse badi khushi hai 💕",
+                "Ye rose aapke liye… 🌹",
+                "aur mera dil bhi… ❤️",
+                "I love you Nainu 🤍",
+                " Aapka paglu Hubby Ji",
+                "Welcome Wife Ji 😊",
+                "Yeh chhoti si duniya sirf aapke liye banayi hai…",
+                "Aaj Rose Day hai 🌹",
+                "toh socha aapko thoda special feel karaya jaye…",
+                "Yaha har click pe surprise milega…",
+                "thode flowers… thodi masti… thoda pyaar 💕",
+                "Smile kar rahi ho na? 😄",
+                "Bas wahi dekhna tha mujhe…",
+                "Chaliye Wife Ji…",
+                "aapka Rose Day surprise shuru karte hain 🌹❤️"
+            ]
+        };
+
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const audio = document.getElementById('bgMusic');
+        let welcomeTimeout;
+
+        /* ================= INIT ================= */
+        window.onload = () => {
+            setGreeting(); // Pre-set main page greeting
+            playWelcomeSequence(); // Start intro
+            resizeCanvas();
+            initPhysics();
+            animate();
+
+            // Auto-rotate quotes
+            setInterval(rotateQuote, 5000);
+
+            // Attempt autoplay
+            audio.play().then(() => {
+                onMusicStart();
+            }).catch(error => {
+                console.log("Autoplay blocked.");
+            });
+        };
+
+        /* ================= WELCOME SEQUENCE ================= */
+        function playWelcomeSequence() {
+            if (state.welcomeIndex >= state.roseWish.length) {
+                finishWelcomeSequence();
+                return;
+            }
+
+            const text = state.roseWish[state.welcomeIndex];
+            const el = document.getElementById('welcome-message');
+            const title = document.getElementById('welcome-title');
+
+            // Fade out
+            el.style.opacity = '0';
+
+            setTimeout(() => {
+                el.innerText = text;
+                el.style.opacity = '1';
+
+                // Change title dynamically based on progress
+                if (state.welcomeIndex === 0) title.innerText = "Hello Love...";
+                if (state.welcomeIndex === 12) title.innerText = "Welcome ❤️";
+
+                state.welcomeIndex++;
+                welcomeTimeout = setTimeout(playWelcomeSequence, 3500); // 3.5s per message
+            }, 500);
+        }
+
+        function finishWelcomeSequence() {
+            clearTimeout(welcomeTimeout);
+            document.getElementById('welcome-message').innerText = "Ready?";
+            document.getElementById('welcome-title').innerText = "Let's Go!";
+            document.getElementById('enter-wrapper').style.opacity = '1';
+            document.getElementById('skip-btn').style.display = 'none';
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        /* ================= NAVIGATION ================= */
+        function switchScreen(screenId) {
+            document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+            document.getElementById(screenId + '-screen').classList.add('active');
+
+            if (screenId === 'main') {
+                document.getElementById('game-score').style.opacity = '1';
+                document.getElementById('footer').classList.add('visible');
+                state.gameActive = true;
+                startTyping();
+            }
+        }
+
+        function goToPassword() {
+            toggleMusic(true);
+            switchScreen('password');
+        }
+
+        function onMusicStart() {
+            state.musicPlaying = true;
+            document.getElementById('music-toggle').innerHTML = '🔊';
+            // Start simulated visualizer (CSS pulsing)
+            document.querySelector('.glass-panel').classList.add('beating');
+            document.querySelectorAll('.btn').forEach(b => b.classList.add('beating'));
+        }
+
+        function toggleMusic(forcePlay = false) {
+            const btn = document.getElementById('music-toggle');
+            if (forcePlay || audio.paused) {
+                audio.play().then(() => {
+                    onMusicStart();
+                }).catch(e => console.log("Audio autoplay blocked", e));
+            } else {
+                audio.pause();
+                btn.innerHTML = '🔇';
+                state.musicPlaying = false;
+                document.querySelector('.glass-panel').classList.remove('beating');
+                document.querySelectorAll('.btn').forEach(b => b.classList.remove('beating'));
+            }
+        }
+
+        document.getElementById('music-toggle').addEventListener('click', () => toggleMusic());
+
+        /* ================= FEATURES ================= */
+        function checkPassword() {
+            const input = document.getElementById('pass-input').value.trim().toUpperCase();
+            if (input === 'NAINU') {
+                switchScreen('main');
+            } else {
+                const err = document.getElementById('error-msg');
+                err.style.display = 'block';
+                err.classList.add('shake');
+                setTimeout(() => err.classList.remove('shake'), 500);
+            }
+        }
+
+        function checkEnter(e) { if (e.key === 'Enter') checkPassword(); }
+
+        function setGreeting() {
+            const hour = new Date().getHours();
+            let greeting = "Good Morning";
+            if (hour >= 12 && hour < 17) greeting = "Good Afternoon";
+            else if (hour >= 17) greeting = "Good Evening";
+
+            const randomNick = state.nicknames[Math.floor(Math.random() * state.nicknames.length)];
+            document.getElementById('greeting-text').innerText = `${greeting}, ${randomNick}!`;
+            document.getElementById('dynamic-header').innerText = `Happy Rose Day ${randomNick}! 🌹`;
+        }
+
+        function rotateQuote() {
+            if (state.screen !== 'main') return;
+            state.quoteIndex = (state.quoteIndex + 1) % state.quotes.length;
+            const el = document.getElementById('quote-text');
+            el.style.animation = 'none'; // Reset animation
+            el.offsetHeight; /* trigger reflow */
+            el.innerText = `"${state.quotes[state.quoteIndex]}"`;
+            el.style.animation = 'textFade 5s infinite';
+        }
+
+        /* ================= TYPING ON MAIN SCREEN ================= */
+        let typingTimeout;
+        let typingIndex = 0;
+
+        function startTyping() {
+            // Cancel any existing typing
+            if (typingTimeout) clearTimeout(typingTimeout);
+
+            const element = document.getElementById('typing-text');
+            typingIndex = 0;
+
+            function typeNextMessage() {
+                if (typingIndex >= state.roseWish.length) {
+                    // Stop and show final message
+                    element.innerHTML = "DEKHO MADAM JI AUR V BHUT KUCH H YHA AAPKE LIYE ❤️";
+                    return;
+                }
+
+                const text = state.roseWish[typingIndex];
+                element.innerHTML = "";
+                let charIndex = 0;
+
+                function typeChar() {
+                    if (charIndex < text.length) {
+                        element.innerHTML += text.charAt(charIndex);
+                        charIndex++;
+                        typingTimeout = setTimeout(typeChar, 50);
+                    } else {
+                        // Finished typing this line
+                        typingIndex++;
+                        typingTimeout = setTimeout(typeNextMessage, 3000); // Wait 3s before next
+                    }
+                }
+
+                typeChar();
+            }
+
+            typeNextMessage();
+        }
+
+        function openLetter() { document.getElementById('letter-modal').classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        function toggleGameHelp() { document.getElementById('help-modal').classList.add('active'); }
+
+        /* ================= PHYSICS ENGINE (Simulated Audio Sync) ================= */
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor(x, y, isRain = false) {
+                this.x = x || Math.random() * canvas.width;
+                this.y = y || canvas.height + Math.random() * 100;
+                this.size = Math.random() * 20 + 15;
+                this.baseSize = this.size;
+                this.speedY = Math.random() * 1 + 0.5;
+                this.speedX = Math.random() * 2 - 1;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 2 - 1;
+                this.type = Math.random() > 0.5 ? '🌹' : '🌸';
+                if (Math.random() > 0.8) this.type = '❤️';
+                this.vx = 0; this.vy = 0; this.friction = 0.95;
+                this.isRain = isRain;
+            }
+
+            update(mouse) {
+                // Removed beat animation for performance
+                this.size = this.baseSize;
+
+                if (this.isRain) {
+                    this.y += this.vy;
+                    this.x += this.vx;
+                    this.rotation += this.rotationSpeed;
+                    return;
+                }
+
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+
+                // Simplified mouse interaction
+                if (mouse.x) {
+                    const dx = this.x - mouse.x;
+                    const dy = this.y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 80) {
+                        const force = (80 - distance) / 80;
+                        this.vx += (dx / distance) * force * 1.5;
+                        this.vy += (dy / distance) * force * 1.5;
+                    }
+                }
+
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= this.friction;
+                this.vy *= this.friction;
+
+                // Wrap normal particles
+                if (this.y < -50) {
+                    this.y = canvas.height + 50;
+                    this.x = Math.random() * canvas.width;
+                }
+                if (this.x < -50) this.x = canvas.width + 50;
+                if (this.x > canvas.width + 50) this.x = -50;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.font = `${this.size}px Arial`;
+                ctx.fillText(this.type, -this.size / 2, -this.size / 2);
+                ctx.restore();
+            }
+
+            checkClick(mx, my) {
+                const dx = this.x - mx;
+                const dy = this.y - my;
+                // Increased hit area for easier clicking on mobile
+                return Math.sqrt(dx * dx + dy * dy) < this.size * 3;
+            }
+        }
+
+        function initPhysics() {
+            // Minimal particles for smooth performance
+            for (let i = 0; i < 8; i++) state.particles.push(new Particle());
+        }
+
+        let mouse = { x: null, y: null };
+        window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        window.addEventListener('touchmove', (e) => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; });
+        window.addEventListener('click', (e) => handleGameClick(e.clientX, e.clientY));
+
+        /* ================= RIPPLE EFFECT ================= */
+        window.addEventListener('click', function (e) {
+            createRipple(e.clientX, e.clientY);
+            // Still handle game clicks
+            handleGameClick(e.clientX, e.clientY);
+        });
+
+        // Touch support for ripple & game
+        window.addEventListener('touchstart', function (e) {
+            const touch = e.touches[0];
+            createRipple(touch.clientX, touch.clientY);
+
+            // Handle game click immediately on touch
+            handleGameClick(touch.clientX, touch.clientY);
+        });
+
+        function createRipple(x, y) {
+            const ripple = document.createElement('div');
+            ripple.classList.add('ripple');
+            const size = 20;
+            ripple.style.width = size + 'px';
+            ripple.style.height = size + 'px';
+            ripple.style.left = (x - size / 2) + 'px';
+            ripple.style.top = (y - size / 2) + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        // Initialize Physics & Animation Loop
+        initPhysics();
+        animate();
+
+        // Create burst on click
+        function handleBigRoseClick() {
+            const rose = document.getElementById('big-rose');
+
+            // Bounce animation
+            rose.style.transform = "scale(1.3) rotate(5deg)";
+            setTimeout(() => {
+                rose.style.transform = "scale(1) rotate(0deg)";
+            }, 200);
+
+            // Trigger Rain
+            rainRoses();
+
+            // Show message (Poem)
+            const poem = `
+                <span style="font-size: 1.5rem; display: block; margin-bottom: 15px; color: #ff0055;">🌹✨ <strong>Happy Rose Day meri pyaari Wife Ji</strong> ❤️💍</span>
+                <span style="font-size: 1.2rem; line-height: 1.6; display: block;">
+                Duniya ke liye rose ek phool hota hai 🌹<br>
+                par mere liye… mera poora garden hi aap ho �🌷🌼<br><br>
+                Aur us garden ki sabse haseen,<br>
+                sabse pyari, sabse mehakti hui rose<br>
+                sirf aap ho… meri Nainu 🥺❤️🌹✨<br><br>
+                Hamesha aise hi muskuraati rehna 😊💕<br>
+                I love you sooo much Wife Ji 🫂💖
+                </span>
+            `;
+            const revealEl = document.getElementById('reveal-words');
+            revealEl.innerHTML = poem;
+            revealEl.style.animation = 'none';
+            revealEl.offsetHeight; /* trigger reflow */
+            revealEl.style.animation = 'popIn 1s forwards'; // Slower popin
+
+            // Floating word effect (Simple)
+            createFloatingWord(window.innerWidth / 2, window.innerHeight / 2, "Love You ❤️");
+        }
+
+        function createFloatingWord(x, y, text) {
+            const el = document.createElement('div');
+            el.innerText = text;
+            el.style.position = 'absolute';
+            el.style.left = '50%';
+            el.style.top = '50%';
+            el.style.transform = 'translate(-50%, -50%)';
+            el.style.color = '#fff';
+            el.style.fontFamily = "'Great Vibes', cursive";
+            el.style.fontSize = '3rem';
+            el.style.pointerEvents = 'none';
+            el.style.textShadow = '0 0 10px #ff0055';
+            el.style.transition = 'all 3s ease-out';
+            el.style.zIndex = '2000';
+            el.style.opacity = '1';
+            document.body.appendChild(el);
+
+            setTimeout(() => {
+                el.style.top = '20%'; // Float up
+                el.style.opacity = '0';
+            }, 50);
+
+            setTimeout(() => el.remove(), 3000);
+        }
+
+        function rainRoses() {
+            // Minimal count for smooth mobile performance
+            const count = 15;
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    let p = new Particle(Math.random() * canvas.width, -50, true); // isRain = true
+                    p.vx = (Math.random() - 0.5) * 4;
+                    p.vy = Math.random() * 5 + 5;
+                    p.type = '🌹';
+                    p.size = Math.random() * 30 + 30;
+                    state.particles.push(p);
+                }, i * 30); // Faster release (30ms * 80 = 2.4s total)
+            }
+        }
+
+        function createBurst(x, y, count = 5) {
+            for (let i = 0; i < count; i++) {
+                let p = new Particle(x, y);
+                p.vx = (Math.random() - 0.5) * 15;
+                p.vy = (Math.random() - 0.5) * 15;
+                state.particles.push(p);
+            }
+        }
+
+        function handleGameClick(x, y) {
+            if (!state.gameActive) return;
+            for (let i = state.particles.length - 1; i >= 0; i--) {
+                if (state.particles[i].checkClick(x, y)) {
+                    createBurst(state.particles[i].x, state.particles[i].y);
+                    state.particles.splice(i, 1);
+                    state.particles.push(new Particle(null, canvas.height + 50));
+                    incrementScore();
+                    break;
+                }
+            }
+        }
+
+        function incrementScore() {
+            state.score++;
+            document.getElementById('score-val').innerText = state.score;
+            if (state.score === 10) {
+                state.gameActive = false; // Stop game at 10
+                document.getElementById('game-modal').classList.add('active');
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            state.particles.forEach((p, index) => {
+                p.update(mouse);
+                p.draw();
+                // More aggressive cleanup
+                if (state.particles.length > 25 && index > 10 && (p.x < -100 || p.x > canvas.width + 100 || p.y > canvas.height + 100)) {
+                    state.particles.splice(index, 1);
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+    </script>
+</body>
+
+</html>
